@@ -53,7 +53,7 @@ class UserModel extends _baseModel_1.BaseModel {
      * @param file
      */
     async setIcon(file) {
-        const path = `user/${this.userID}/iconImage/${new Date().getTime()}.${file.name}`;
+        const path = `user/${this.userID}/iconImage/${new Date().getTime()}`;
         this.mast.userIcon = await this.repositoryContainer.s3Repository.addFile(path, file);
     }
     /**

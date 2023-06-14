@@ -28,6 +28,20 @@ class PostModel extends _baseModel_1.BaseModel {
         return this.mast.image.url || null;
     }
     // ============================================
+    // getter / setter
+    // ============================================
+    get description() {
+        return this.mast.description || '';
+    }
+    set description(input) {
+        if (input) {
+            this.mast.description = input;
+        }
+        else {
+            this.mast.description = null;
+        }
+    }
+    // ============================================
     // validation
     // ============================================
     get isRegistable() {

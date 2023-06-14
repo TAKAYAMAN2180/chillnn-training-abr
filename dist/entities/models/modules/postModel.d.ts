@@ -7,6 +7,8 @@ export declare class PostModel extends BaseModel<PostMast> {
     get ownerUserID(): string;
     get createdAt(): number;
     get imageURL(): string | null;
+    get description(): string;
+    set description(input: string);
     get isRegistable(): boolean;
     /**
      * 画像の登録
