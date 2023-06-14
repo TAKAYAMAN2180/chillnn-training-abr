@@ -26,6 +26,7 @@ type PostMast {
   postID: ID!
   ownerUserID: ID!
   image: S3Object!
+  description: String
   createdAt: AWSTimestamp!
   deletedAt: AWSTimestamp
 }
@@ -34,6 +35,7 @@ input PostMastInput {
   postID: ID!
   ownerUserID: ID!
   image: S3ObjectInput!
+  description: String
   createdAt: AWSTimestamp!
   deletedAt: AWSTimestamp
 }

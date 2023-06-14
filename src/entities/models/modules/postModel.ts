@@ -1,4 +1,3 @@
-import { UserModel } from '..';
 import { S3Object, Scalars } from '../..';
 import { generateUUID } from '../../..';
 import { PostMast } from '../../type';
@@ -29,6 +28,19 @@ export class PostModel extends BaseModel<PostMast> {
         return this.mast.image.url || null;
     }
     // ============================================
+    // getter / setter
+    // ============================================
+    get description() {
+        return this.mast.description || ''
+    }
+    set description(input: string) {
+        if (input) {
+            this.mast.description = input;
+        } else {
+            this.mast.description = null;
+        }
+    }
+    // ============================================
     // validation
     // ============================================
     get isRegistable() {
@@ -42,7 +54,7 @@ export class PostModel extends BaseModel<PostMast> {
      * @param file
      */
     async setImage(file: File) {
-        const path = `user/${this.ownerUserID}/post/${this.postID}`;
+        const path = `user/${this.ownerUserID}/post/${this.postID}/${new Date().getTime()}.${file.name}`;
         this.mast.image = await this.repositoryContainer.s3Repository.addFile(path, file);
     }
 

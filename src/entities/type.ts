@@ -40,6 +40,7 @@ export type PostMast = {
   postID: Scalars['ID'];
   ownerUserID: Scalars['ID'];
   image: S3Object;
+  description?: Maybe<Scalars['String']>;
   createdAt: Scalars['AWSTimestamp'];
   deletedAt?: Maybe<Scalars['AWSTimestamp']>;
 };
@@ -48,6 +49,7 @@ export type PostMastInput = {
   postID: Scalars['ID'];
   ownerUserID: Scalars['ID'];
   image: S3ObjectInput;
+  description?: Maybe<Scalars['String']>;
   createdAt: Scalars['AWSTimestamp'];
   deletedAt?: Maybe<Scalars['AWSTimestamp']>;
 };
