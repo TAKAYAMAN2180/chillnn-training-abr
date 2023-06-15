@@ -16,6 +16,8 @@ export declare class UserModel extends BaseModel<UserMast> {
      * @param file
      */
     setIcon(file: File): Promise<void>;
+    get introduction(): string;
+    set introduction(introStr: string);
     /**
      * ユーザー情報を新規登録、または更新する
      */

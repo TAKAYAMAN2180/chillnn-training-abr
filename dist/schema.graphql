@@ -57,6 +57,7 @@ input S3ObjectInput {
 type UserMast {
   userID: ID!
   name: String!
+  introduction: String
   email: String!
   userIcon: S3Object
   createdAt: AWSTimestamp!
@@ -66,6 +67,7 @@ type UserMast {
 input UserMastInput {
   userID: ID!
   name: String!
+  introduction: String
   email: String!
   userIcon: S3ObjectInput
   createdAt: AWSTimestamp!

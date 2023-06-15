@@ -1,6 +1,7 @@
 type UserMast {
     userID: ID!
     name: String!
+    introduction: String
     email: String!
     userIcon: S3Object
     # status
@@ -11,6 +12,7 @@ type UserMast {
 input UserMastInput {
     userID: ID!
     name: String!
+    introduction: String
     email: String!
     userIcon: S3ObjectInput
     # status
