@@ -1,0 +1,15 @@
+type CommentMast{
+    postID: ID!
+    commentUserID: ID!
+    commentID: ID!
+    comment: String!
+    createdAt: AWSTimestamp!
+}
+
+type CommentMastInput{
+    postID: ID!
+    commentUserID: ID!
+    commentID: ID!
+    comment: String!
+    createdAt: AWSTimestamp!
+}

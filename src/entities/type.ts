@@ -30,6 +30,22 @@ export type Scalars = {
 
 
 
+export type CommentMast = {
+  postID: Scalars['ID'];
+  commentUserID: Scalars['ID'];
+  commentID: Scalars['ID'];
+  comment: Scalars['String'];
+  createdAt: Scalars['AWSTimestamp'];
+};
+
+export type CommentMastInput = {
+  postID: Scalars['ID'];
+  commentUserID: Scalars['ID'];
+  commentID: Scalars['ID'];
+  comment: Scalars['String'];
+  createdAt: Scalars['AWSTimestamp'];
+};
+
 export enum ErrorCode {
   chillnnTraining_401_notSignIn = 'chillnnTraining_401_notSignIn',
   chillnnTraining_404_resourceNotFound = 'chillnnTraining_404_resourceNotFound',

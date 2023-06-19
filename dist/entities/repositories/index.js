@@ -14,15 +14,17 @@ exports.RepositoryContainer = void 0;
 __exportStar(require("./modules/S3Repository"), exports);
 __exportStar(require("./modules/postMastRepository"), exports);
 __exportStar(require("./modules/userMastRepository"), exports);
+__exportStar(require("./modules/commentMastRepository"), exports);
 class RepositoryContainer {
     constructor(
     // object
     s3Repository, //
     // entity
-    postMastRepository, userMastRepository) {
+    postMastRepository, userMastRepository, commentMastRepository) {
         this.s3Repository = s3Repository;
         this.postMastRepository = postMastRepository;
         this.userMastRepository = userMastRepository;
+        this.commentMastRepository = commentMastRepository;
     }
 }
 exports.RepositoryContainer = RepositoryContainer;

@@ -16,6 +16,22 @@ scalar AWSTimestamp
 
 scalar AWSURL
 
+type CommentMast {
+  postID: ID!
+  commentUserID: ID!
+  commentID: ID!
+  comment: String!
+  createdAt: AWSTimestamp!
+}
+
+type CommentMastInput {
+  postID: ID!
+  commentUserID: ID!
+  commentID: ID!
+  comment: String!
+  createdAt: AWSTimestamp!
+}
+
 enum ErrorCode {
   chillnnTraining_401_notSignIn
   chillnnTraining_404_resourceNotFound

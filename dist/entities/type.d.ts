@@ -27,6 +27,20 @@ export declare type Scalars = {
     AWSTimestamp: number;
     AWSURL: string;
 };
+export declare type CommentMast = {
+    postID: Scalars['ID'];
+    commentUserID: Scalars['ID'];
+    commentID: Scalars['ID'];
+    comment: Scalars['String'];
+    createdAt: Scalars['AWSTimestamp'];
+};
+export declare type CommentMastInput = {
+    postID: Scalars['ID'];
+    commentUserID: Scalars['ID'];
+    commentID: Scalars['ID'];
+    comment: Scalars['String'];
+    createdAt: Scalars['AWSTimestamp'];
+};
 export declare enum ErrorCode {
     chillnnTraining_401_notSignIn = "chillnnTraining_401_notSignIn",
     chillnnTraining_404_resourceNotFound = "chillnnTraining_404_resourceNotFound",
