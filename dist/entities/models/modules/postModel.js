@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostModel = void 0;
 const __1 = require("../../..");
 const _baseModel_1 = require("./_baseModel");
+const commentModel_1 = require("./commentModel");
 class PostModel extends _baseModel_1.BaseModel {
     static getBlanc(ownerUserID, image) {
         return {
@@ -66,6 +67,19 @@ class PostModel extends _baseModel_1.BaseModel {
             this.mast.createdAt = new Date().getTime();
             this.mast = await this.repositoryContainer.postMastRepository.addPost(this.mast);
         }
+    }
+    /**
+     * この投稿のコメントの情報を取得する
+     */
+    async fetchThisComments() {
+        const res = await this.repositoryContainer.commentMastRepository.fetchCommentsByPostID(this.postID);
+        return res.map((item) => this.modelFactory.CommentModel(item));
+    }
+    async createNewComments() {
+        const myUser = await this.repositoryContainer.userMastRepository.fetchMyUserMast();
+        return myUser && this.modelFactory.CommentModel(commentModel_1.CommentModel.getBlanc(this.postID, myUser.userID, ''), {
+            isNew: true,
+        });
     }
 }
 exports.PostModel = PostModel;

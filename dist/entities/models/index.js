@@ -13,9 +13,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ModelFactory = void 0;
 const postModel_1 = require("./modules/postModel");
 const userModel_1 = require("./modules/userModel");
+const commentModel_1 = require("./modules/commentModel");
 const _baseModel_1 = require("./modules/_baseModel");
 __exportStar(require("./modules/postModel"), exports);
 __exportStar(require("./modules/userModel"), exports);
+__exportStar(require("./modules/commentModel"), exports);
 class ModelFactory {
     constructor(repositoryContainer) {
         this.repositoryContainer = repositoryContainer;
@@ -26,6 +28,10 @@ class ModelFactory {
     }
     UserModel(mast, option) {
         return new userModel_1.UserModel(mast, //
+        this.repositoryContainer, this, option || _baseModel_1.BaseModel.baseModelOption());
+    }
+    CommentModel(mast, option) {
+        return new commentModel_1.CommentModel(mast, //
         this.repositoryContainer, this, option || _baseModel_1.BaseModel.baseModelOption());
     }
 }
