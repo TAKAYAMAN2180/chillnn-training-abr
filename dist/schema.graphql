@@ -24,7 +24,7 @@ type CommentMast {
   createdAt: AWSTimestamp!
 }
 
-type CommentMastInput {
+input CommentMastInput {
   postID: ID!
   commentUserID: ID!
   commentID: ID!
