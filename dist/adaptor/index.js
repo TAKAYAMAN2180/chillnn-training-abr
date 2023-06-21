@@ -12,3 +12,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./repositoryCacheAdaptor/postMastRepository"), exports);
 __exportStar(require("./repositoryCacheAdaptor/userMastRepository"), exports);
+__exportStar(require("./repositoryCacheAdaptor/commentMastRepository"), exports);
